@@ -20,9 +20,23 @@ contract MyContract{
 
     MyStruct public  myStruct = MyStruct(1,"Hello");
 
+    //Arrays
+    uint[] public uintArray = [1,2,3];
+    string[] public stringArray = ["apple", "Banana", "carrot"];
+    string[] public myArray;
+    uint256[][] public array2D = [[1, 2, 3], [4, 5, 6]];
+
     //Local Variables
     function getValue() public pure returns (uint){
         uint value = 1;
         return value;
+    }
+
+    function addValue(string memory _value) public {
+        myArray.push(_value);
+    }
+
+    function arrayCount() public view returns(uint) {
+        return myArray.length;
     }
 }
